@@ -11,13 +11,13 @@ const Poem = props => {
     const [poem, setPoem] = useState([{}]);
 
     const disqus_config = () => {
-        this.page.url = `https://psyche.id/poems/${router.query.id}`;
+        this.page.url = `https://syntac.tech/poems/${router.query.id}`;
         this.page.identifier = poem.title;
     };
 
     useEffect(() => {
         axios
-            .get(`http://localhost:1337/poems?slug=${router.query.id}`)
+            .get(`https://syntactech-admin.herokuapp.com/poems?slug=${router.query.id}`)
             .then(res => {
                 console.log(res.data);
                 setPoem(res.data);
