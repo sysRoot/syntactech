@@ -37,7 +37,7 @@ const Poem = props => {
             <MetaTags>
                 {console.log(poem)}
                 <title>{poem[0].title}</title>
-                <meta name="description" content={poem[0].poem} />
+                <meta name="description" content={poem[0].content} />
                 <meta property="og:title" content={poem[0].title} />
                 <meta
                     property="og:image"
@@ -55,7 +55,7 @@ const Poem = props => {
 
                     <hr />
                     <pre>
-                        <p>{poem[0].poem}</p>
+                        <p>{poem[0].content}</p>
                     </pre>
                     <hr />
                     <div id="disqus_thread" />

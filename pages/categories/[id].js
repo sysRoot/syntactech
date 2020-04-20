@@ -15,10 +15,10 @@ import {
 
 const Category = () => {
   const router = useRouter();
-  const [category, setCategory] = useState([{poems:[{title: "...", poem: "..."}]}]);
+  const [category, setCategory] = useState([{poems:[{title: "...", content: "..."}]}]);
   useEffect(() => {
     axios
-      .get(`https://syntactech-admin.herokuapp.com/categories?slug=${router.query.id}`)
+      .get(`https://syntactech.herokuapp.com/categories?slug=${router.query.id}`)
       .then(res => {
         console.log('r', res.data)
         setCategory(res.data)
@@ -37,11 +37,11 @@ const Category = () => {
             <CardHeader>{poem.title}</CardHeader>
               <CardBody>
                 <CardText>
-                  {poem.poem.slice(0, 191)}
+                  {poem.content.slice(0, 191)}
                 </CardText>
               </CardBody>
               <CardFooter>
-                <Link href={`/poems/${poem._id}`}>
+                <Link href={`/poems/${poem.slug}`}>
                   <a className="btn btn-primary btn-sm"> Read this poem.</a>
                 </Link>
               </CardFooter>
