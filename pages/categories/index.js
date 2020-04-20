@@ -16,7 +16,7 @@ const CategoryList = () => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     axios
-      .get("https://syntactech.herokuapp.com/categories")
+      .get("https://syntactech-admin.herokuapp.com/categories")
       .then(res => setCategories(res.data))
       .catch(err => console.log(err));
   }, [setCategories]);
