@@ -18,7 +18,7 @@ const Category = () => {
   const [category, setCategory] = useState([{poems:[{title: "...", content: "..."}]}]);
   useEffect(() => {
     axios
-      .get(`https://syntactech-admin.herokuapp.com/categories?slug=${router.query.id}`)
+      .get(`https://meaningpoetry-backend.herokuapp.com/categories?slug=${router.query.id}`)
       .then(res => {
         console.log('r', res.data)
         setCategory(res.data)

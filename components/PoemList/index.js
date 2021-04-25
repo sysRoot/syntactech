@@ -16,7 +16,7 @@ const PoemList = () => {
     const [poems, setPoems] = useState([{ title: '...', content: '...' }]);
     useEffect(() => {
         axios
-            .get('https://syntactech-admin.herokuapp.com/poems')
+            .get('https://meaningpoetry-backend.herokuapp.com/poems')
             .then((res) => {
                 setPoems(res.data);
                 console.log(res.data);
